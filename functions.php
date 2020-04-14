@@ -9,15 +9,20 @@ function phou_stylesheets() {
 }
 add_action('wp_enqueue_scripts', 'phou_stylesheets');
 
-function home_menu($args) { 
+function home_menu($args) {
   $post_type = $args['post_type'];
+  // print_r($post_type);
   $post_type_obj = get_post_type_object($post_type);
-  // print_r($post_type_obj->labels);
+  // if ($post_type_obj) {
+  //   print_r($post_type_obj);
+  // } else {
+  //   print_r('there isnt object');
+  // }
   ?>
   
   <div class="col-xs-12 col-sm-6">
     <div class="menu-section">
-      <h2 class="menu-section-title"><?php echo $post_type_obj->labels->singular_name; ?></h2>
+      <h2 class="menu-section-title"><?php echo $post_type; ?></h2>
       <hr>
       <?php 
         $menus = new WP_Query(array(
@@ -29,6 +34,7 @@ function home_menu($args) {
         while($menus->have_posts()) {
           $menus->the_post();
         ?>
+        <a href="<?php echo get_post_type_archive_link($post_type); ?>">
         <div class="menu-item">
           <div class="menu-item-name"><?php the_title(); ?></div>
           <div class="menu-item-price"><?php the_field('price'); ?></div>
@@ -40,7 +46,7 @@ function home_menu($args) {
               } 
             }
             ?></div>
-        </div>
+        </div></a>
         <?php } ?>
       </div>
     </div>

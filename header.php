@@ -14,11 +14,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#about" class="page-scroll">About</a></li>
-            <li><a href="#restaurant-menu" class="page-scroll">Menu</a></li>
-            <li><a href="#portfolio" class="page-scroll">Gallery</a></li>
-            <li><a href="#team" class="page-scroll">Our Chef</a></li>
-            <li><a href="#call-reservation" class="page-scroll">Contact</a></li>
+            <li><a href="/#about" class="page-scroll">About</a></li>
+            <li><a href="/#restaurant-menu" class="page-scroll">Menu</a></li>
+            <!-- <li><a href="#portfolio" class="page-scroll">Gallery</a></li> -->
+            <!-- <li><a href="#team" class="page-scroll">Our Chef</a></li> -->
+            <li><a href="/#call-reservation" class="page-scroll">Contact</a></li>
           </ul>
         </div>
         <!-- /.navbar-collapse --> 

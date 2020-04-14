@@ -30,18 +30,7 @@
   </div>
 
   <div class="container">
-
-      <div class="row">      
-    <?php
-      home_menu(array(
-        'post_type' => 'koreanSpecial'
-      )); ?>
-      <?php
-      home_menu(array(
-        'post_type' => 'koreanRice'
-      )); ?>      
-    </div>
-    
+  
     <div class="row">
       <?php
       home_menu(array(
@@ -89,7 +78,7 @@
   </div>
 </div>
 <!-- Portfolio Section -->
-<div id="portfolio">
+<!-- <div id="portfolio">
   <div class="section-title text-center center">
     <div class="overlay">
       <h2>Gallery</h2>
@@ -104,9 +93,9 @@
           <li>
             <ol class="type">
               <li><a href="#" data-filter="*" class="active">All</a></li>
-              <li><a href="#" data-filter=".breakfast">Vietnamese</a></li>
+              <li><a href="#" data-filter=".Vietnamese">Vietnamese</a></li>
               <li><a href="#" data-filter=".lunch">Lunch</a></li>
-              <li><a href="#" data-filter=".dinner">Korean</a></li>
+              <li><a href="#" data-filter=".Korean">Korean</a></li>
             </ol>
           </li>
         </ul>
@@ -226,8 +215,9 @@
       </div>
     </div>
   </div>
-</div>
-Team Section
+</div> -->
+<!-- Team Section -->
+<!--
 <div id="team" class="text-center">
   <div class="overlay">
     <div class="container">
@@ -237,7 +227,7 @@ Team Section
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
       </div>
       <div id="row">
-        <!-- <div class="col-md-4 team">
+        <div class="col-md-4 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/01.jpg" alt="..."></div>
             <div class="caption">
@@ -245,7 +235,7 @@ Team Section
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam.</p>
             </div>
           </div>
-        </div> -->
+        </div>
         <div class="col-md-4 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/02.jpg" alt="..."></div>
@@ -255,7 +245,7 @@ Team Section
             </div>
           </div>
         </div>
-        <!-- <div class="col-md-4 team">
+        <div class="col-md-4 team">
           <div class="thumbnail">
             <div class="team-img"><img src="img/team/03.jpg" alt="..."></div>
             <div class="caption">
@@ -263,11 +253,12 @@ Team Section
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam.</p>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
 </div>
+ -->
 <!-- Call Reservation Section -->
 <div id="call-reservation" class="text-center">
   <div class="container">
