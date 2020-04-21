@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <!-- Restaurant Menu Section -->
 <div id="restaurant-menu">
   <div class="section-title text-center center">
@@ -18,6 +17,9 @@
         'post_type' => get_queried_object()->name
       )); ?>
     </div>
+  </div>    
 </div>
 
 <?php get_footer(); ?>
+
+

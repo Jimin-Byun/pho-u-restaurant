@@ -144,7 +144,7 @@ a:focus,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #d6b13a !important;
-  background-color: transparent;
+  background-color: #262626;
 }
 .navbar-toggle {
   border-radius: 0;
@@ -199,7 +199,7 @@ a:focus,
   display: table;
   width: 100%;
   padding: 0;
-  background: url(./img/intro-bg.jpg) no-repeat center center;
+  background: url(./img/bg-index.jpg) no-repeat center center;
   background-color: #e5e5e5;
   -webkit-background-size: cover;
   -moz-background-size: cover;
