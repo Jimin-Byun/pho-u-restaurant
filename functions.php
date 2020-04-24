@@ -20,6 +20,7 @@ function phou_stylesheets() {
 add_action('wp_enqueue_scripts', 'phou_stylesheets');
 
 function phou_features() {
+  add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'phou_features');
@@ -48,7 +49,26 @@ function choose_option() {
       } 
     }
   }
-
+  if (get_field('choose_pho')) {
+    $phos = get_field('choose_pho');
+    echo '<div><b>Choose</b> ';
+    if($phos) {
+      foreach($phos as $pho) {
+        if ($pho === end($phos)) { echo $pho . '</div>'; }
+        else { echo $pho . " or "; }
+      } 
+    }
+  }
+  if (get_field('choose_appetizer')) {
+    $appetizers = get_field('choose_appetizer');
+    echo '<div><b>Choose</b> ';
+    if($appetizers) {
+      foreach($appetizers as $appetizer) {
+        if ($appetizer === end($appetizers)) { echo $appetizer . '</div>'; }
+        else { echo $appetizer . " or "; }
+      } 
+    }
+  }
   if (get_field('choose_tofu')) {
     $tofus = get_field('choose_tofu');
     echo '<div><b>Choose</b> ';
@@ -79,6 +99,8 @@ function choose_option() {
       } 
     }
   }
+
+
 }
 
 function home_menu($args) {
@@ -90,8 +112,11 @@ function home_menu($args) {
   //   print_r('there isnt object');
   // }
   ?>
-  
-  <div class="col-xs-12 col-sm-12">
+  <div class="col-xs-12 col-sm-12" id="<?php 
+    if ($post_type == 'appetizer') { echo 'appetizer'; }
+    elseif ($post_type == 'vermicelli' or $post_type == 'pho') { echo 'vietnamese'; }
+    elseif ($post_type == 'seafoodNoodle' or $post_type == 'koreanSpecial' or $post_type == 'koreanRice') { echo 'korean'; }
+    elseif ($post_type == 'lunchBox' or $post_type == 'specialBox') { echo 'box'; } ?>">
     <div class="menu-section">
       <h2 class="menu-section-title">
       <a href="<?php 
@@ -112,20 +137,22 @@ function home_menu($args) {
         while($menus->have_posts()) {
           $menus->the_post();
         ?>
-        
-        <div class="menu-item"><a href="<?php echo site_url('/' . $post_type); ?>">
-          <div class="menu-item-name"><b><?php the_field('menu_number'); ?> </b><?php the_title(); ?></div>
-          <div class="menu-item-price"><?php the_field('price'); ?></div>
-          <div class="menu-item-description"><?php 
-            $diets = get_field('diet');
-            if($diets) {
-              foreach($diets as $diet) {
-                if ($diet === end($diets)) { echo $diet; }
-                else { echo $diet . ", "; }
+        <div class="row">
+          <div class="menu-item"><a href="<?php echo site_url('/' . $post_type); ?>">
+            <div class="menu-item-name"><b><?php the_field('menu_number'); ?> </b><?php the_title(); ?></div>
+            <div class="menu-item-price"><?php the_field('price'); ?></div>
+            <div class="menu-item-description"><?php 
+              $diets = get_field('diet');
+              if($diets) {
+                foreach($diets as $diet) {
+                  if ($diet === end($diets)) { echo $diet; }
+                  else { echo $diet . ", "; }
+                }
               }
-            }
-            ?></div>
-        </div></a>
+              ?>
+            </div>
+          </div></a>
+        </div>
         <?php wp_reset_postdata(); } ?>
       </div>
     </div>
@@ -152,6 +179,7 @@ function archive_menu($args) {
         while($menus->have_posts()) {
           $menus->the_post();
         ?>
+        <a href="<?php the_permalink(); ?>">
         <div class="menu-item">
           <div class="menu-item-name"><b><?php the_field('menu_number'); ?> </b><?php the_title(); ?></div>
           <div class="menu-item-price"><?php the_field('price'); ?></div>
@@ -160,6 +188,7 @@ function archive_menu($args) {
         <?php 
           choose_option();
         } ?>
+        </a>
       </div>
     </div>
   <?php 
@@ -196,7 +225,7 @@ function gallery() {
           elseif ($type == 'lunchBox' or $type == 'specialBox') { echo 'box'; } ?>
           ">
           <div class="portfolio-item">
-            <div class="hover-bg"><a href="<?php echo $thumbnail[0] ?>" title="the_field('menu_number')" data-lightbox-gallery="gallery1">
+            <div class="hover-bg"><a href="<?php the_permalink(); ?>" title="<?php the_field('menu_number'); ?>" data-lightbox-gallery="gallery1">
               <div class="hover-text">
                 <h4><?php the_title(); ?></h4>
               </div>

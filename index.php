@@ -1,5 +1,21 @@
 <?php get_header(); ?>
 
+<!-- Header -->
+<header id="header">
+  <div class="intro">
+    <div class="overlay">
+      <div class="container">
+        <div class="row">
+          <div class="intro-text">
+            <h1>Pho U</h1>
+            <p>Vietnamese & Korean Cuisine</p>
+            <a href="/#about" class="btn btn-custom btn-lg page-scroll">Discover Story</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 <!-- About Section -->
 <div id="about">
   <div class="container">
@@ -11,9 +27,9 @@
         <div class="about-text">
           <h2>Our Restaurant</h2>
           <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
-          <h3>Experienced Chefs</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+          <p>We would like to welcome you to Pho U. We not only carefully select ingredients for all foods, we also boast the best taste through our demanding cooking process, using all natural ingredients. For example, our beef broth simmers for two days to achieve its mellow, rich and textured taste. Our kitchen is kept at the highest level of cleanliness.</p>
+          <h3>Our Specialty</h3>
+          <p>The Vietnamese community in Victoria has praised Pho U’s authentic flavour, recognizing it as a true rice noodle restaurant. We also serve popular Korean and Korean Chinese cuisines, with a home-cooked value.</p>
         </div>
       </div>
     </div>
@@ -25,13 +41,26 @@
     <div class="overlay">
       <h2>Menu</h2>
       <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed.</p>
+      <p>With taste, quantity and reasonable prices, we will satisfy your taste buds with great food.</p>
     </div>
   </div>
 
   <div class="container">
-  
     <div class="row">
+      <div class="categories">
+        <ul>
+          <li>
+            <ol class="type">
+              <li><a href="#appetizer">Appetizer</a></li>
+              <li><a href="#vietnamese">Vietnamese</a></li>
+              <li><a href="#korean">Korean</a></li>
+              <li><a href="#box">Lunch & Special Box</a></li>
+            </ol>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+    </div>
       <?php
       home_menu(array(
         'post_type' => 'appetizer'
@@ -40,9 +69,6 @@
       home_menu(array(
         'post_type' => 'vermicelli'
       )); ?>
-    </div>
-    
-    <div class="row">      
     <?php
       home_menu(array(
         'post_type' => 'pho'
@@ -50,10 +76,7 @@
       <?php
       home_menu(array(
         'post_type' => 'seafoodNoodle'
-      )); ?>      
-    </div>
-
-    <div class="row">      
+      )); ?>       
     <?php
       home_menu(array(
         'post_type' => 'koreanSpecial'
@@ -61,10 +84,7 @@
       <?php
       home_menu(array(
         'post_type' => 'koreanRice'
-      )); ?>      
-    </div>
-
-    <div class="row">      
+      )); ?>          
     <?php
       home_menu(array(
         'post_type' => 'lunchBox'
@@ -72,9 +92,7 @@
       <?php
       home_menu(array(
         'post_type' => 'specialBox'
-      )); ?>      
-    </div>
-
+      )); ?>
   </div>
 </div>
 <!-- Portfolio Section -->
@@ -83,26 +101,11 @@
     <div class="overlay">
       <h2>Gallery</h2>
       <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed.</p>
+      <p>Every satisfied customer puts a smile on our faces/makes our day complete.</p>
     </div>
   </div>
   <div class="container">
-    <div class="row">
-      <div class="categories">
-        <ul class="cat">
-          <li>
-            <ol class="type">
-              <li><a href="#" data-filter="*" class="active">All</a></li>
-              <li><a href="#" data-filter=".appetizer">Appetizer</a></li>
-              <li><a href="#" data-filter=".vietnamese">Vietnamese</a></li>
-              <li><a href="#" data-filter=".korean">Korean</a></li>
-              <li><a href="#" data-filter=".box">Lunch & Special Box</a></li>
-            </ol>
-          </li>
-        </ul>
-        <div class="clearfix"></div>
-      </div>
-    </div>
+    <?php get_template_part('template_parts/category', 'excerpt'); ?>
     <div class="row">
       <div class="portfolio-items">
       <?php gallery() ?>

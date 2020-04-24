@@ -13,31 +13,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/#about" class="page-scroll">About</a></li>
-            <li><a href="/#restaurant-menu" class="page-scroll">Menu</a></li>
-            <li><a href="#portfolio" class="page-scroll">Gallery</a></li>
+            <li><a href="<?php echo site_url('/#about'); ?>" class="page-scroll">About</a></li>
+            <li><a href="<?php echo site_url('/#restaurant-menu'); ?>" class="page-scroll">Menu</a></li>
+            <li><a href="<?php echo site_url('/#portfolio'); ?>" class="page-scroll">Gallery</a></li>
             <!-- <li><a href="#team" class="page-scroll">Our Chef</a></li> -->
-            <!-- <li><a href="/#call-reservation" class="page-scroll">Contact</a></li> -->
+            <li><a href="/#call-reservation" class="page-scroll">Contact</a></li>
             <!-- <li><img src="<?php bloginfo('template_url'); ?>/img/logo.png" width=100></li> -->
           </ul>
-          <img src="<?php bloginfo('template_url'); ?>/img/logo.png" width=50>
+          <a href ="<?php echo site_url('/'); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo.png" width=100></a>
         </div>
         <!-- /.navbar-collapse --> 
       </div>
     </nav>
 
-    <!-- Header -->
-    <header id="header">
-      <div class="intro">
-        <div class="overlay">
-          <div class="container">
-            <div class="row">
-              <div class="intro-text">
-                <h1>Pho U</h1>
-                <p>Vietnamese & Korean Cuisine</p>
-                <a href="/#about" class="btn btn-custom btn-lg page-scroll">Discover Story</a> </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
